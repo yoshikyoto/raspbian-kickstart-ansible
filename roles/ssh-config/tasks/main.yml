@@ -1,0 +1,24 @@
+---
+- name: create .ssh dir
+  file:
+    path: /home/pi/.ssh
+    state: directory
+    owner: pi
+    group: pi
+    mode: 0700
+
+- name: deploy authorized_keys
+  copy:
+    src: authorized_keys
+    dest: /home/pi/.ssh
+    owner: pi
+    group: pi
+    mode: 0644
+
+- name: deploy sshd_config to disable password authentication
+  copy:
+    src: sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
