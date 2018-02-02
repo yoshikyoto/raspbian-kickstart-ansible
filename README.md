@@ -5,7 +5,7 @@ Ansible after install raspbian (for Raspberry Pi).
 ## Execute
 
 1. Change `roles/ssh-config/files/authorized_keys` into your publickey, correctly.
-2. Change `inventory`. Your raspbian's IP adress in it.
+2. Change `inventory` and your raspbian's IP adress in it.
 3. Execute `ansible-playbook playbooks/kickstart.yml`
 
 ## What's this?
